@@ -5,6 +5,11 @@ export const Container = styled.View`
 
   justify-content: center;
   align-items: center;
+
+  background: ${({ theme }) => theme.colors.background_primary};
 `;
 
-export const Text = styled.Text``;
+export const Text = styled.Text`
+  font-size: 30px;
+  font-family: ${({ theme }) => theme.fonts.secondary_600};
+`;
