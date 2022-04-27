@@ -36,6 +36,7 @@
     "react/function-component-definition": "off",
     "@typescript-eslint/ban-types": "off",
     "import/no-unresolved": "off",
+    "camelcase": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
