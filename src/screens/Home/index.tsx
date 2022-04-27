@@ -1,11 +1,22 @@
+/* eslint-disable  */
+import { StatusBar } from 'expo-status-bar';
 import React, { FC } from 'react';
-import { Container, Text } from './styles';
+import { Container, Header } from './styles';
+
+import Logo from '../../assets/logo.svg'
 
 type Props = {};
 
 const Home: FC<Props> = () => (
   <Container>
-    <Text>HOME</Text>
+    <StatusBar
+      style="light"
+      translucent
+      backgroundColor='transparent'
+    />
+    <Header>
+      <Logo />
+    </Header>
   </Container>
 );
 
