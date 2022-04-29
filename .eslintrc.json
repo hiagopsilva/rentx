@@ -37,7 +37,10 @@
     "@typescript-eslint/ban-types": "off",
     "import/no-unresolved": "off",
     "@typescript-eslint/no-empty-interface": "off",
-  "react/style-prop-object": "off",
+    "react/style-prop-object": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "camelcase": "off",
     "import/extensions": [
       "error",
