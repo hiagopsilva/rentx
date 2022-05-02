@@ -25,7 +25,9 @@ import {
   Period,
   About,
   Accessories,
+  Footer,
 } from './styles';
+import Button from '../../components/Button';
 
 type Props = {};
 
@@ -74,6 +76,10 @@ const CarDetails: FC<Props> = () => {
           para quem gosta de acelerar.
         </About>
       </Content>
+
+      <Footer>
+        <Button title="Confirmar" />
+      </Footer>
     </Container>
   );
 };
