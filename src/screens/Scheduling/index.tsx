@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
+import { StatusBar } from 'expo-status-bar';
 import BackButton from '../../components/BackButton';
 
 import {
@@ -19,6 +20,8 @@ const Scheduling: React.FC = () => {
 
   return (
     <Container>
+      <StatusBar style="light" translucent backgroundColor="transparent" />
+
       <Header>
         <BackButton onPress={() => {}} color={theme.colors.shape} />
 
