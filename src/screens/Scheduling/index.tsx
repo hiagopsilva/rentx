@@ -11,9 +11,12 @@ import {
   DateInfo,
   DateTitle,
   DateValue,
+  Content,
+  Footer,
 } from './styles';
 
 import ArrowSvg from '../../assets/arrow.svg';
+import Button from '../../components/Button';
 
 const Scheduling: React.FC = () => {
   const theme = useTheme();
@@ -43,6 +46,12 @@ const Scheduling: React.FC = () => {
           </DateInfo>
         </RentalPeriod>
       </Header>
+
+      <Content />
+
+      <Footer>
+        <Button title="Confirmar" />
+      </Footer>
     </Container>
   );
 };
