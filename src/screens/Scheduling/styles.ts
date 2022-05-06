@@ -1,3 +1,4 @@
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled, { css } from 'styled-components/native';
 
@@ -16,6 +17,8 @@ export const Header = styled.View`
   background-color: ${({ theme }) => theme.colors.header};
   justify-content: center;
   padding: 25px;
+
+  padding-top: ${getStatusBarHeight() + 30}px;
 `;
 
 export const Title = styled.Text`
