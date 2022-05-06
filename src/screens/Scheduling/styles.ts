@@ -33,7 +33,7 @@ export const RentalPeriod = styled.View`
   justify-content: space-between;
   align-items: center;
 
-  margin-top: 32px;
+  margin: 32px 0px;
 `;
 
 export const DateInfo = styled.View`
