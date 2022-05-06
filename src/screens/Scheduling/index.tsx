@@ -17,6 +17,7 @@ import {
 
 import ArrowSvg from '../../assets/arrow.svg';
 import Button from '../../components/Button';
+import Calendar from '../../components/Calendar';
 
 const Scheduling: React.FC = () => {
   const theme = useTheme();
@@ -47,7 +48,9 @@ const Scheduling: React.FC = () => {
         </RentalPeriod>
       </Header>
 
-      <Content />
+      <Content>
+        <Calendar />
+      </Content>
 
       <Footer>
         <Button title="Confirmar" />
