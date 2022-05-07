@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { FC } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
+import { useNavigation } from '@react-navigation/native';
 import Accessory from '../../components/Accessory';
 import BackButton from '../../components/BackButton';
 import ImageSlider from '../../components/ImageSlider';
@@ -44,12 +45,17 @@ type Props = {};
 
 const SchedulingDetails: FC<Props> = () => {
   const theme = useTheme();
+  const navigation = useNavigation();
+
+  const handleSchedulingComplete = () =>
+    navigation.navigate('SchedulingComplete');
+
   return (
     <Container>
       <StatusBar style="dark" translucent backgroundColor="transparent" />
 
       <Header>
-        <BackButton onPress={() => {}} />
+        <BackButton onPress={() => navigation.goBack()} />
       </Header>
 
       <CarImages>
@@ -111,7 +117,7 @@ const SchedulingDetails: FC<Props> = () => {
       </Content>
 
       <Footer>
-        <Button title="Confirmar" />
+        <Button title="Alugar agora" onPress={handleSchedulingComplete} />
       </Footer>
     </Container>
   );

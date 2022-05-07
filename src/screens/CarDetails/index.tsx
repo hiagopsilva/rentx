@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { FC } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import Accessory from '../../components/Accessory';
 import BackButton from '../../components/BackButton';
 import ImageSlider from '../../components/ImageSlider';
@@ -32,12 +33,15 @@ import Button from '../../components/Button';
 type Props = {};
 
 const CarDetails: FC<Props> = () => {
+  const navigation = useNavigation();
+
+  const handleConfirmRental = () => navigation.navigate('Scheduling');
   return (
     <Container>
       <StatusBar style="dark" translucent backgroundColor="transparent" />
 
       <Header>
-        <BackButton onPress={() => {}} />
+        <BackButton onPress={() => navigation.goBack()} />
       </Header>
 
       <CarImages>
@@ -78,7 +82,10 @@ const CarDetails: FC<Props> = () => {
       </Content>
 
       <Footer>
-        <Button title="Confirmar" />
+        <Button
+          title="Escolher período do aluguel"
+          onPress={handleConfirmRental}
+        />
       </Footer>
     </Container>
   );

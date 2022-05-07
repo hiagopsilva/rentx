@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { RectButtonProps } from 'react-native-gesture-handler';
 import {
   Container,
   Details,
@@ -24,13 +25,13 @@ type CarData = {
   thumbnail: string;
 };
 
-type Props = {
+type Props = RectButtonProps & {
   data: CarData;
 };
 
-const Car: FC<Props> = ({ data }) => {
+const Car: FC<Props> = ({ data, ...rest }) => {
   return (
-    <Container>
+    <Container {...rest}>
       <Details>
         <Brand>{data.brand}</Brand>
         <Name>{data.name}</Name>
