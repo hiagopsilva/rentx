@@ -41,6 +41,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "@typescript-eslint/no-empty-function": "off",
+    "no-console": "off",
     "camelcase": "off",
     "import/extensions": [
       "error",
