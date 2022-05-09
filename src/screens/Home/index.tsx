@@ -17,17 +17,6 @@ const Home: FC<Props> = () => {
   const [loading, setLoading] = useState(true);
   const [cars, setCars] = useState<CarDTO[]>([]);
 
-  const carData = {
-    brand: 'Audi',
-    name: 'RS 5 coupé',
-    rent: {
-      period: 'ao dia',
-      price: 120,
-    },
-    thumbnail:
-      'https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png',
-  };
-
   const handleCarDetails = () => navigation.navigate('CarDetails');
 
   useEffect(() => {
