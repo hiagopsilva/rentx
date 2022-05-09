@@ -14,19 +14,10 @@ import {
 } from './styles';
 
 import GasolineSvg from '../../assets/gasoline.svg';
-
-type CarData = {
-  brand: string;
-  name: string;
-  rent: {
-    period: string;
-    price: number;
-  };
-  thumbnail: string;
-};
+import { CarDTO } from '../../dtos/CarDTO';
 
 type Props = RectButtonProps & {
-  data: CarData;
+  data: CarDTO;
 };
 
 const Car: FC<Props> = ({ data, ...rest }) => {
