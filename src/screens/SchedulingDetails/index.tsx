@@ -117,7 +117,11 @@ const SchedulingDetails: FC<Props> = () => {
       </Content>
 
       <Footer>
-        <Button title="Alugar agora" onPress={handleSchedulingComplete} />
+        <Button
+          title="Alugar agora"
+          color={theme.colors.success}
+          onPress={handleSchedulingComplete}
+        />
       </Footer>
     </Container>
   );
