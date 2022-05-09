@@ -8,12 +8,13 @@ import Logo from '../../assets/logo.svg';
 import Car from '../../components/Car';
 import api from '../../services/api';
 import { CarDTO } from '../../dtos/CarDTO';
+import Load from '../../components/Load';
 
 type Props = {};
 
 const Home: FC<Props> = () => {
   const navigation = useNavigation();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [cars, setCars] = useState<CarDTO[]>([]);
 
   const carData = {
@@ -55,13 +56,17 @@ const Home: FC<Props> = () => {
         </HeaderContent>
       </Header>
 
-      <CarList
-        data={cars}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => (
-          <Car data={item} onPress={handleCarDetails} />
-        )}
-      />
+      {loading ? (
+        <Load />
+      ) : (
+        <CarList
+          data={cars}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <Car data={item} onPress={handleCarDetails} />
+          )}
+        />
+      )}
     </Container>
   );
 };
