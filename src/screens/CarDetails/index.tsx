@@ -38,7 +38,8 @@ const CarDetails: FC<Props> = () => {
 
   const { car } = route.params as Params;
 
-  const handleConfirmRental = () => navigation.navigate('Scheduling');
+  const handleConfirmRental = () => navigation.navigate('Scheduling', { car });
+
   return (
     <Container>
       <StatusBar style="dark" translucent backgroundColor="transparent" />
