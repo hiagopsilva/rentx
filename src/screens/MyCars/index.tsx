@@ -78,7 +78,7 @@ const MyCars: React.FC = () => {
         <Content>
           <Appointments>
             <AppointmentsTitle>Agendamentos feitos</AppointmentsTitle>
-            <AppointmentsQuantity>09</AppointmentsQuantity>
+            <AppointmentsQuantity>{cars.length}</AppointmentsQuantity>
           </Appointments>
 
           <FlatList
