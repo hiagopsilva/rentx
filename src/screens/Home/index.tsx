@@ -30,6 +30,9 @@ const Home: FC<Props> = () => {
   const handleCarDetails = (car: CarDTO) =>
     navigation.navigate('CarDetails', { car });
 
+  const handleOpenMyCars = (car: CarDTO) =>
+    navigation.navigate('MyCars', { car });
+
   useEffect(() => {
     async function fetchCarsList() {
       try {
@@ -68,7 +71,7 @@ const Home: FC<Props> = () => {
         />
       )}
 
-      <MyCarsButton>
+      <MyCarsButton onPress={handleOpenMyCars}>
         <Ionicons name="ios-car-sport" size={32} color={theme.colors.shape} />
       </MyCarsButton>
     </Container>
