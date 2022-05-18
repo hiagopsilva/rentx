@@ -49,7 +49,7 @@ const CarDetails: FC<Props> = () => {
       </Header>
 
       <CarImages>
-        <ImageSlider imageUrl={car.photos} />
+        <ImageSlider imagesUrl={car.photos} />
       </CarImages>
 
       <Content>

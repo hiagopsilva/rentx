@@ -1,4 +1,7 @@
-import React, { FC } from 'react';
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable react/no-array-index-key */
+import React, { FC, useRef, useState } from 'react';
+import { FlatList, ViewToken } from 'react-native';
 
 import {
   Container,
@@ -9,22 +12,44 @@ import {
 } from './styles';
 
 type Props = {
-  imageUrl: string[];
+  imagesUrl: string[];
 };
 
-const ImageSlider: FC<Props> = ({ imageUrl }) => {
+type ChangeImageProps = {
+  viewableItems: ViewToken[];
+  change: ViewToken[];
+};
+
+const ImageSlider: FC<Props> = ({ imagesUrl }) => {
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const indexChanged = useRef((info: ChangeImageProps) => {
+    const { index } = info.viewableItems[0];
+
+    setImageIndex(index!);
+  });
+
   return (
     <Container>
       <ImageIndexes>
-        <ImageIndex active />
-        <ImageIndex active={false} />
-        <ImageIndex active={false} />
-        <ImageIndex active={false} />
+        {imagesUrl.map((_, index) => (
+          <ImageIndex active={index === imageIndex} key={String(index)} />
+        ))}
       </ImageIndexes>
 
-      <CarImageWrapper>
-        <CarImage source={{ uri: imageUrl[0] }} resizeMode="contain" />
-      </CarImageWrapper>
+      <FlatList
+        data={imagesUrl}
+        keyExtractor={key => key}
+        renderItem={({ item }) => (
+          <CarImageWrapper>
+            <CarImage source={{ uri: item }} resizeMode="contain" />
+          </CarImageWrapper>
+        )}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        onViewableItemsChanged={indexChanged.current}
+        pagingEnabled
+      />
     </Container>
   );
 };

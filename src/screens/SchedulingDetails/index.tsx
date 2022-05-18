@@ -118,7 +118,7 @@ const SchedulingDetails: FC<Props> = () => {
 
       <CarImages>
         <ImageSlider
-          imageUrl={[
+          imagesUrl={[
             'https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png',
           ]}
         />
